@@ -2,6 +2,7 @@ const express=require("express");
 const Bodyparser=require("body-parser");
 const request=require("request");
 const https=require("https");
+const { log } = require("console");
 
 const app=express();
 
@@ -10,6 +11,10 @@ app.use(express.static("public"));
 
 app.get("/",(req,res)=>{
     res.sendFile(__dirname+"/signup.html")
+})
+
+app.get("/news",(req,res)=>{
+    console.log("new project")
 })
 
 app.post("/",(req,res)=>{
